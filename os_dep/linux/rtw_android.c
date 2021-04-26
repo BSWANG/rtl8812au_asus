@@ -37,7 +37,6 @@
 #include <linux/interrupt.h>
 #include <linux/irq.h>
 #endif
-
 extern void macstr2num(u8 *dst, u8 *src);
 
 const char *android_wifi_cmd_str[ANDROID_WIFI_CMD_MAX] = {
@@ -574,7 +573,7 @@ int rtw_android_priv_cmd(struct net_device *net, struct ifreq *ifr, int cmd)
 		goto exit;
 	}
 #ifdef CONFIG_COMPAT
-	if (is_compat_task()) {
+	if (0) {
 		/* User space is 32-bit, use compat ioctl */
 		compat_android_wifi_priv_cmd compat_priv_cmd;
 
